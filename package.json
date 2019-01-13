@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "http-server",
     "watch": "webpack --watch",
-    "dev": "webpack --inline --progress --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",

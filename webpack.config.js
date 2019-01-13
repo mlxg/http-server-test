@@ -36,12 +36,12 @@ module.exports = {
         new ExtractTextPlugin('index.css'),
         // new BundleAnalyzerPlugin()
     ],
-    devServer: {
+    /*devServer: {
         proxy: {
             '*': {
                 target: 'http://127.0.0.1:7001',
                 changeOrigin: true
             }
         }
-    },
+    },*/
 }
