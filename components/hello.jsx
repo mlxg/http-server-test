@@ -21,22 +21,32 @@ class HelloComponent extends React.Component {
     }
 
     submitForm() {
-        axios.post('/form', {
-            id: document.getElementById('id').value,
+        axios.post('/user', {
+            uid: document.getElementById('id').value,
             // name: document.getElementById('name').value,
-        }).then(res => console.log(res.data.msg)
+        }).then(res => {
+                // const userInfo = res.data.data.user
+                // this.setState({
+                //     userInfo
+                // })
+            }
         ).catch(err => console.log(err))
     }
-
 
     render() {
         const listData = this.state.listData
         let ele = listData.map(item => {
             return <p key={item.id}>{item.id}:{item.title}</p>
         })
+
+        // let userInfo = this.state.userInfo
+        // let user = userInfo.map(item => {
+        //     return <p key={item.id}>{item.uid}:{item.mobile}</p>
+        // })
         return (
             <div>
                 <div>{ele}</div>
+                {/*<div>{user}</div>*/}
                 <form>
                     <input type="text" name="id" id="id"/>
                     {/*<input type="text" name="name" id="name"/>*/}

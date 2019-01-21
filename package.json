@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "server": "http-server",
-    "watch": "webpack --watch",
+    "watch": "webpack --watch"
   },
-  "author": "",
+  "author": "caicai",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "http-server": "^0.11.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   }
