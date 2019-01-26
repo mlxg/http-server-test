@@ -21,7 +21,7 @@ class HelloComponent extends React.Component {
     }
 
     submitForm() {
-        axios.post('/user', {
+        axios.get('/user', {
             uid: document.getElementById('id').value,
             // name: document.getElementById('name').value,
         }).then(res => {
@@ -34,7 +34,7 @@ class HelloComponent extends React.Component {
     }
 
     render() {
-        const listData = this.state.listData
+        const listData = this.state.listData;
         let ele = listData.map(item => {
             return <p key={item.id}>{item.id}:{item.title}</p>
         })
