@@ -1,7 +1,7 @@
-const webpack = require('webpack')
-const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const webpack = require('webpack');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     mode: 'development',
@@ -21,10 +21,18 @@ module.exports = {
             },
             {
                 test: /\.less$/,
+                // include: path.join(__dirname, '/node_modules/antd'),
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: ["css-loader", "less-loader"]
                 })
+            },
+            /**
+             *  antd.conf
+             */
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
             }
         ]
     },
@@ -44,4 +52,4 @@ module.exports = {
             }
         }
     },*/
-}
+};

@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import {Button} from "antd";
 
 class HelloComponent extends React.Component {
 
@@ -22,8 +23,10 @@ class HelloComponent extends React.Component {
 
     submitForm() {
         axios.get('/user', {
-            uid: document.getElementById('id').value,
-            // name: document.getElementById('name').value,
+            params: {
+                id: document.getElementById('id').value
+                // name: document.getElementById('name').value,
+            }
         }).then(res => {
                 // const userInfo = res.data.data.user
                 // this.setState({
@@ -50,7 +53,7 @@ class HelloComponent extends React.Component {
                 <form>
                     <input type="text" name="id" id="id"/>
                     {/*<input type="text" name="name" id="name"/>*/}
-                    <input type="button" value="check" onClick={this.submitForm}/>
+                    <Button onClick={this.submitForm}>check</Button>
                 </form>
             </div>
 
